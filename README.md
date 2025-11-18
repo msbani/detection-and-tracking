@@ -12,7 +12,7 @@ This implementation uses a combination of **color-based circle detection and obj
 - **Re-detection:** Every few frames (or when tracking fails), the system redetects the ball to maintain robustness.
 
 ## Key Features
-- Lightweight and efficient — suitable for real time tracking.
+- Lightweight and efficient: suitable for real time tracking.
   ```bash
   tracker = cv2.legacy.TrackerMOSSE_create()
   ```
@@ -20,16 +20,16 @@ This implementation uses a combination of **color-based circle detection and obj
   ```bash
   if not tracking or frame_count % 30 == 0:
   ```
-- Bounding box visualization:
-  - Blue — during detection
+- Bounding box visualization.
+  - Blue: during detection
   ```bash
   cv2.rectangle(frame, (x - r, y - r), (x + r, y + r), (255, 0, 0), 2)
   ```
-  - Green — during tracking
+  - Green: during tracking
   ```bash
   cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
   ```
-  - Red — when tracking is lost
+  - Red: when tracking is lost
   ```bash
   cv2.putText(frame, "Tracking Lost", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
   ```
